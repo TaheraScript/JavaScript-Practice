@@ -7,4 +7,5 @@ const laptop ={
 }
 
 console.log(laptop);
-console.log(laptop.brand);
+
+console.log(laptop.hasOwnProperty('model'))
