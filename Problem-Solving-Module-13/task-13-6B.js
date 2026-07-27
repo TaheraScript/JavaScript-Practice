@@ -6,15 +6,19 @@
 
 
 // Starter Snippet:
-// // Input: an array of numbers
-// // Output: how many numbers are divisible by 3
-// // Returns: a number
+// Input: an array of numbers
+// Output: how many numbers are divisible by 3
+// Returns: a number
  
-// function countMultiplesOfThree(numbers) {
-//   let count = 0;
-//   // TODO: loop through and count multiples of 3
+function countMultiplesOfThree(numbers) {
+  let count = 0;
+  for(i= 0; i<numbers.length ; i++){
+    if(numbers[i] % 3 === 0){
+        count =count +1;
+    }
+  }
  
-//   return count;
-// }
+  return count;
+}
  
-// console.log(countMultiplesOfThree([3, 4, 6, 7, 9, 10])); // Expected: 3
+console.log(countMultiplesOfThree([3, 4, 6, 7, 9, 10])); // Expected: 3

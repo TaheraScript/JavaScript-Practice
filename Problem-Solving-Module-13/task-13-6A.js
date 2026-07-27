@@ -11,19 +11,30 @@ Starter Snippet:
 // Returns: a number */
  
 function findSecondSmallest(numbers) {
-  let smallest = numbers[0];
-  let secondSmallest = numbers[0];
-  for(i=1 ; i<numbers.length ;i++){
-    let number = numbers[i]
-    if(smallest > number){
-        smallest = number;
-        if(smallest<secondSmallest && secondSmallest<number)
-            console.log('p')
+    let smallest = Infinity;
+    let secondSmallest = Infinity;
+
+    for (let i = 0; i < numbers.length; i++) {
+        let currentNumber = numbers[i];
+
+        // If we found a new smallest number
+        if (currentNumber < smallest) {
+            secondSmallest = smallest;
+            smallest = currentNumber;
+        }
+
+        // If currentNumber is between smallest and secondSmallest
+        else if (
+            currentNumber > smallest &&
+            currentNumber < secondSmallest
+        ) {
+            secondSmallest = currentNumber;
+        }
     }
-    //if()
-  }
- 
-  return secondSmallest;
+
+    return secondSmallest;
 }
  
 console.log(findSecondSmallest([10, 5, 8, 20, 15])); // Expected: 8
+
+
