@@ -30,3 +30,4 @@
 //convert it into single statement
 let sumNumberThanMultiplyByThree = (a,b) => (a+b)*3
 console.log(sumNumberThanMultiplyByThree(5,6))
+

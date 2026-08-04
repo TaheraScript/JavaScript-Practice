@@ -23,3 +23,7 @@ function runningTotal(amounts){
     return cumulativeSum;
 }
 console.log(runningTotal([100, 50, 25]))
+
+
+
+
