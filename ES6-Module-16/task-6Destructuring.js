@@ -10,15 +10,17 @@ Validation
 Return "Invalid" যদি user.name না থাকে।
  */
 function extractUserInfo(userObj) {
-    if(userObj.hobbies.length === 0){
-        return 'nothing yet'
+   
+    if(!userObj.user.name){
+        return 'Invalid'
 
     }
-    const {user:name} = userObj
-    const {user:age} = userObj
-    const [firstHobby,,] =userObj
-    return `${name} (${age}) likes ${firstHobby}`
+    const {user:{name : userName,age :userAge}} = userObj//can use below 2lines instead of this
+    // const{user:{name :userName}} = userObj
+    // const {user:{age :userAge}} = userObj
+    const {hobbies:[firstHobby= 'nothing yet',,]} =userObj
+    return `${userName} (${userAge}) likes ${firstHobby }`
 }
-console.log({user:{name:"Sadia",age:22}, hobbies:["reading","coding"]})
-console.log({user:{name:"Rafi",age:19}, hobbies:[]}) 
-console.log({user:{age:30}, hobbies:[]})
+console.log(extractUserInfo({user:{name:"Sadia",age:22}, hobbies:["reading","coding"]}))
+console.log(extractUserInfo({user:{name:"Rafi",age:19}, hobbies:[]})) 
+console.log(extractUserInfo({user:{age:30}, hobbies:[]}))
